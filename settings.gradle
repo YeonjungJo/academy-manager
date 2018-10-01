@@ -1,1 +1,3 @@
 rootProject.name = 'academy-manager'
+include 'academy-manager-client'
+
