@@ -10,38 +10,60 @@ buildscript {
     }
 }
 
-apply plugin: 'java'
-apply plugin: 'eclipse'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
 
-group = 'zoe'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
+    group = 'zoe'
+    version = '0.0.1-SNAPSHOT'
+    sourceCompatibility = 1.8
 
-repositories {
-    mavenCentral()
-}
+    repositories {
+        mavenCentral()
+    }
 
 
-ext {
-    springBootAdminVersion = '2.0.3'
-}
+    ext {
+        springBootAdminVersion = '2.0.3'
+    }
 
-dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
-//    implementation('org.springframework.boot:spring-boot-starter-security')
-    implementation('org.springframework.boot:spring-boot-starter-thymeleaf')
-    implementation('de.codecentric:spring-boot-admin-starter-server')
-    implementation('org.flywaydb:flyway-core')
-    runtimeOnly('mysql:mysql-connector-java')
-    compileOnly('org.projectlombok:lombok')
-    testImplementation('org.springframework.boot:spring-boot-starter-test')
-//    testImplementation('org.springframework.security:spring-security-test')
-}
+    dependencies {
+        compileOnly('org.projectlombok:lombok')
+        testImplementation('org.springframework.boot:spring-boot-starter-test')
+    }
 
-dependencyManagement {
-    imports {
-        mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+    dependencyManagement {
+        imports {
+            mavenBom "de.codecentric:spring-boot-admin-dependencies:${springBootAdminVersion}"
+        }
     }
 }
+
+project(':academy-manager-domain') {
+    dependencies {
+    }
+}
+
+project(':academy-manager-app') {
+    dependencies {
+        compile project(':academy-manager-domain')
+    }
+}
+
+//sourceSets {
+//    main {
+//        resources {
+//            srcDir "${project.projectDir}/src/main/java"
+//        }
+//    }
+//    test {
+//        java {
+//            srcDir "${project.projectDir}/src/integrationtest/java"
+//        }
+//        resources {
+//            srcDir "${project.projectDir}/src/test/java"
+//        }
+//    }
+//}
