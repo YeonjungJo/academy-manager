@@ -1,14 +1,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
-import StudentManagement from './views/StudentManagement.vue';
-import TeacherManagement from './views/TeacherManagement.vue';
+import Home from '@/components/Home';
+import StudentManagement from '@/components/StudentManagement';
+import TeacherManagement from '@/components/TeacherManagement';
 
 Vue.use(Router);
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',

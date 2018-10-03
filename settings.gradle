@@ -1,5 +1,4 @@
 rootProject.name = 'academy-manager'
-include 'academy-manager-client'
 include 'academy-manager-domain'
 include 'academy-manager-app'
 

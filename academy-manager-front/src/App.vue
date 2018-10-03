@@ -25,10 +25,10 @@
       </v-list>
     </v-navigation-drawer>
     <v-toolbar
-            app
-            :clipped-left="clipped"
-            color="blue-grey darken-3"
-            dark>
+      app
+      :clipped-left="clipped"
+      color="blue-grey darken-3"
+      dark>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
 
       <v-toolbar-title v-text="title"></v-toolbar-title>
@@ -40,7 +40,7 @@
     </v-content>
 
     <!--<v-footer :fixed="fixed" app>-->
-      <!--<span>&copy; 2017</span>-->
+    <!--<span>&copy; 2017</span>-->
     <!--</v-footer>-->
   </v-app>
 </template>
