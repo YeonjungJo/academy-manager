@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import StudentManagement from './views/StudentManagement.vue';
+import TeacherManagement from './views/TeacherManagement.vue';
 
 Vue.use(Router);
 
@@ -14,12 +16,34 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
+      path: '/student/manage',
+      name: 'student-management',
+      component: StudentManagement,
+    },
+    {
+      path: '/teacher/manage',
+      name: 'teacher-management',
+      component: TeacherManagement,
+    },
+    {
+      path: '/payment/manage',
+      name: 'payment-management',
+      component: TeacherManagement,
+    },
+    {
+      path: '/lecture/manage',
+      name: 'lecture-management',
+      component: TeacherManagement,
+    },
+    {
+      path: '/teaching-material/manage',
+      name: 'teaching-material-management',
+      component: TeacherManagement,
+    },
+    {
+      path: '/contract',
+      name: 'contract',
+      component: TeacherManagement,
     },
   ],
 });
