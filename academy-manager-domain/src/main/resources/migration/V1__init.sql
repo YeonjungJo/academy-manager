@@ -5,8 +5,7 @@ create table attendees
   courseId bigint not null comment '강의ID',
   studentId bigint not null comment '학생ID',
   status varchar(20) default 'READY' not null comment '수강상태'
-)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table courses
 (
@@ -15,12 +14,7 @@ create table courses
   subject varchar(10) not null comment '과목명',
   name varchar(20) not null comment '강의명',
   status varchar(20) default 'READY' not null comment '강의상태'
-)
-;
-
-create index courses_idx01
-  on courses (subject, status)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table rooms
 (
@@ -28,8 +22,7 @@ create table rooms
     primary key,
   name varchar(10) not null comment '이름',
   status varchar(20) default 'ACTIVE' not null comment '상태'
-)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table students
 (
@@ -42,8 +35,7 @@ create table students
   schoolYear varchar(20) not null comment '학년',
   parentPhoneNumber varchar(20) null comment '부모님번호',
   address varchar(120) null comment '주소'
-)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table teachers
 (
@@ -51,12 +43,7 @@ create table teachers
     primary key,
   userId bigint not null comment 'USER ID(FK)',
   subject varchar(100) not null comment '담당과목'
-)
-;
-
-create index teachers_idx01
-  on teachers (subject)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table users
 (
@@ -72,10 +59,5 @@ create table users
   status varchar(20) default 'READY' not null comment '상태',
   createdAt datetime(6) not null comment '생성일',
   grantedAt datetime(6) not null comment '권한부여일'
-)
-;
-
-create index users_idx01
-  on users (loginId, password)
-;
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 

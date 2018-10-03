@@ -12,12 +12,12 @@
         <v-spacer></v-spacer>
         <v-btn outline color="indigo">
           <v-icon dark left>edit</v-icon>
-          신입생 등록
+          수강 타입 추가
         </v-btn>
       </v-card-title>
       <v-data-table
         :headers="headers"
-        :items="students"
+        :items="courses"
         hide-actions
         item-key="name"
         :search="search"
@@ -34,15 +34,14 @@
         </template>
         <template slot="items" slot-scope="props">
           <tr>
-            <td class="text-xs-center">{{ props.item.name }}</td>
+            <td class="text-xs-center">{{ props.item.courseName}}</td>
             <td class="text-xs-center">
               <v-chip outline disabled color="indigo">{{ props.item.type.description }}</v-chip>
             </td>
-            <td class="text-xs-center">{{ props.item.registerType }}</td>
-            <td class="text-xs-center">{{ props.item.originPrice ? props.item.originPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.discountPrice ? props.item.discountPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.finalPrice ? props.item.finalPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.notes }}</td>
+            <td class="text-xs-center">{{ props.item.eng}}</td>
+            <td class="text-xs-center">{{ props.item.math}}</td>
+            <td class="text-xs-center">{{ props.item.discuss}}</td>
+            <td class="text-xs-center">{{ props.item.price}}</td>
           </tr>
         </template>
         <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -58,24 +57,24 @@
 
 <script>
 export default {
-  name: 'StudentManagement',
+  name: 'CourseAdjustment',
   data: () => ({
     search: '',
     headers: [
-      { text: '성명', align: 'center', value: 'name' },
+      { text: '종류', value: 'courseName' },
       { text: '초/중/고', value: 'type' },
-      { text: '등록', value: 'registerType' },
-      { text: '원비', value: 'originPrice' },
-      { text: '할인금액', value: 'discountPrice' },
-      { text: '합계', value: 'finalPrice' },
-      { text: '비고', value: 'notes' },
+      { text: '영어', value: 'eng' },
+      { text: '수학', value: 'math' },
+      { text: '토론', value: 'discuss' },
+      { text: '수강료', value: 'price' },
     ],
-    students: [],
+    courses: [],
   }),
   created() {
     const vm = this;
-    this.$http.get('/api/students').then((response) => {
-      vm.students = response.data;
+    this.$http.get('/api/courses').then((response) => {
+      console.log(response.data);
+      vm.courses = response.data;
     });
   },
 };

@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import StudentManagement from '@/components/StudentManagement';
 import TeacherManagement from '@/components/TeacherManagement';
+import TuitionAdjustment from '@/components/TuitionAdjustment';
 
 Vue.use(Router);
 
@@ -37,6 +38,11 @@ export default new Router({
       path: '/teaching-material/manage',
       name: 'teaching-material-management',
       component: TeacherManagement,
+    },
+    {
+      path: '/tuition/adjust',
+      name: 'tuition-adjustment',
+      component: TuitionAdjustment,
     },
     {
       path: '/contract',

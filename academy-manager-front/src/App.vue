@@ -59,6 +59,7 @@ export default {
         { icon: 'payment', title: '결제관리', url: '/payment/manage' },
         { icon: 'dashboard', title: '수업관리', url: '/lecture/manage' },
         { icon: 'library_books', title: '교재비관리', url: '/teaching-material/manage' },
+        { icon: 'attach_money', title: '수강료조정', url: '/tuition/adjust' },
         { icon: 'phone', title: '연락망조회', url: '/contract' },
       ],
       miniVariant: false,
