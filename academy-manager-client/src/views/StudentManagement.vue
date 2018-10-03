@@ -165,7 +165,7 @@ export default {
     ],
   }),
   created() {
-    this.$http.get('local.enable.com:10001/api').then((response) => {
+    this.$http.get('api').then((response) => {
       console.log(response);
       console.log(response.data);
     });
