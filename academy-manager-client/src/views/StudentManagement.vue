@@ -10,7 +10,9 @@
           hide-details
         ></v-text-field>
         <v-spacer></v-spacer>
-        <v-btn slot="activator" color="primary" dark class="mb-2">신입생 등록</v-btn>
+        <v-btn outline color="indigo">
+          <v-icon dark left>edit</v-icon> 신입생 등록
+        </v-btn>
       </v-card-title>
       <v-data-table
         :headers="headers"
@@ -32,13 +34,14 @@
         <template slot="items" slot-scope="props">
           <tr>
             <td>{{ props.item.name }}</td>
-            <td class="text-xs-right">{{ props.item.calories }}</td>
-            <td class="text-xs-right">{{ props.item.protein }}</td>
-            <td class="text-xs-right">{{ props.item.iron }}</td>
-            <td class="text-xs-right">{{ props.item.calories }}</td>
-            <td class="text-xs-right">{{ props.item.fat }}</td>
-            <td class="text-xs-right">{{ props.item.carbs }}</td>
-            <td class="text-xs-right">{{ props.item.protein }}</td>
+            <td class="text-xs-center">{{ props.item.calories }}</td>
+            <td class="text-xs-center">{{ props.item.protein }}</td>
+            <td class="text-xs-center">{{ props.item.iron }}</td>
+            <td class="text-xs-center">{{ props.item.calories }}</td>
+            <td class="text-xs-center">{{ props.item.calories }}</td>
+            <td class="text-xs-center">{{ props.item.fat }}</td>
+            <td class="text-xs-center">{{ props.item.carbs }}</td>
+            <td class="text-xs-center">{{ props.item.protein }}</td>
           </tr>
         </template>
         <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -60,7 +63,8 @@ export default {
     headers: [
       { text: '성명', align: 'left', value: 'name' },
       { text: '초/중/고', value: 'calories' },
-      { text: '등록일', value: 'carbs' },
+      { text: '등록일(영)', value: 'carbs' },
+      { text: '등록일(수)', value: 'carbs' },
       { text: '등록', value: 'protein' },
       { text: '원비', value: 'iron' },
       { text: '할인금액', value: 'iron' },
@@ -160,7 +164,11 @@ export default {
       },
     ],
   }),
-  // methods: {
-  // },
+  created() {
+    this.$http.get('local.enable.com:10001/api').then((response) => {
+      console.log(response);
+      console.log(response.data);
+    });
+  },
 };
 </script>
