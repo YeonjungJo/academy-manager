@@ -36,7 +36,9 @@
           <tr>
             <td class="text-xs-center">{{ props.item.name }}</td>
             <td class="text-xs-center">
-              <v-chip outline disabled color="indigo">{{ props.item.type.description }}</v-chip>
+              <v-chip outline disabled :color="props.item.type.description === '초등' ? 'indigo'
+              : props.item.type.description === '중등' ? 'green' : 'pink'">{{ props.item.type.description }}
+              </v-chip>
             </td>
             <td class="text-xs-center">{{ props.item.registerType }}</td>
             <td class="text-xs-center">{{ props.item.originPrice ? props.item.originPrice.toLocaleString() : '' }}</td>
@@ -65,9 +67,9 @@ export default {
       { text: '성명', align: 'center', value: 'name' },
       { text: '초/중/고', value: 'type' },
       { text: '등록', value: 'registerType' },
-      { text: '원비', value: 'originPrice' },
-      { text: '할인금액', value: 'discountPrice' },
-      { text: '합계', value: 'finalPrice' },
+      { text: '원비 (원)', value: 'originPrice' },
+      { text: '할인금액 (원)', value: 'discountPrice' },
+      { text: '합계 (원)', value: 'finalPrice' },
       { text: '비고', value: 'notes' },
     ],
     students: [],

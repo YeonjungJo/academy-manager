@@ -9,7 +9,8 @@ create table students (
 	userId bigint not null comment 'USER ID(FK)',
 	school varchar(20) null comment '학교',
 	schoolYear varchar(20) not null comment '학년',
-	parentPhoneNumber varchar(20) null comment '부모님번호'
+	parentPhoneNumber varchar(20) null comment '부모님번호',
+	courseRegistrationId bigint comment '수강중인코스'
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table users (

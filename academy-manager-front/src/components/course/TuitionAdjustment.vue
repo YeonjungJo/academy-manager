@@ -36,17 +36,16 @@
           <tr>
             <td class="text-xs-center">{{ props.item.courseName}}</td>
             <td class="text-xs-center">
-              <v-chip outline disabled color="indigo">{{ props.item.type.description }}</v-chip>
+              <v-chip outline disabled :color="props.item.type.description === '초등' ? 'indigo'
+              : props.item.type.description === '중등' ? 'green' : 'pink'">{{ props.item.type.description }}
+              </v-chip>
             </td>
-            <td class="text-xs-center">{{ props.item.eng}}</td>
-            <td class="text-xs-center">{{ props.item.math}}</td>
-            <td class="text-xs-center">{{ props.item.discuss}}</td>
-            <td class="text-xs-center">{{ props.item.price}}</td>
+            <td class="text-xs-center">{{ props.item.eng === 0 ? '' : props.item.eng}}</td>
+            <td class="text-xs-center">{{ props.item.math === 0 ? '' : props.item.math}}</td>
+            <td class="text-xs-center">{{ props.item.discuss === 0 ? '' : props.item.discuss}}</td>
+            <td class="text-xs-center">{{ props.item.price ? props.item.price.toLocaleString() : '' }}</td>
           </tr>
         </template>
-        <v-alert slot="no-results" :value="true" color="error" icon="warning">
-          "<b> {{ search }} </b>" 에 대한 검색 결과가 없습니다
-        </v-alert>
       </v-data-table>
     </v-card>
   </v-container>
@@ -61,21 +60,29 @@ export default {
   data: () => ({
     search: '',
     headers: [
-      { text: '종류', value: 'courseName' },
+      { text: '이름', value: 'courseName' },
       { text: '초/중/고', value: 'type' },
-      { text: '영어', value: 'eng' },
-      { text: '수학', value: 'math' },
-      { text: '토론', value: 'discuss' },
-      { text: '수강료', value: 'price' },
+      { text: '영어 (시간/주)', value: 'eng' },
+      { text: '수학 (시간/주)', value: 'math' },
+      { text: '토론 (시간/주)', value: 'discuss' },
+      { text: '수강료 (원)', value: 'price' },
     ],
     courses: [],
   }),
   created() {
     const vm = this;
     this.$http.get('/api/courses').then((response) => {
-      console.log(response.data);
       vm.courses = response.data;
     });
   },
 };
 </script>
+<style>
+  tr > td {
+    border-right: 1px dotted rgba(0, 0, 0, .05);
+  }
+
+  tr:last-child {
+    border: none;
+  }
+</style>

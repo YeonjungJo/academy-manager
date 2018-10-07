@@ -9,7 +9,13 @@ public enum SchoolYear {
 	ELEMENTARY_3(SchoolType.ELEMENTARY, 3),
 	ELEMENTARY_4(SchoolType.ELEMENTARY, 4),
 	ELEMENTARY_5(SchoolType.ELEMENTARY, 5),
-	ELEMENTARY_6(SchoolType.ELEMENTARY, 6);
+	ELEMENTARY_6(SchoolType.ELEMENTARY, 6),
+	MIDDLE_1(SchoolType.MIDDLE, 1),
+	MIDDLE_2(SchoolType.MIDDLE, 2),
+	MIDDLE_3(SchoolType.MIDDLE, 3),
+	HIGH_1(SchoolType.HIGH, 1),
+	HIGH_2(SchoolType.HIGH, 2),
+	HIGH_3(SchoolType.HIGH, 3);
 
 	private SchoolType schoolType;
 	private int year;

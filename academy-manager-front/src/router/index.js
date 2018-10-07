@@ -1,9 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
-import StudentManagement from '@/components/StudentManagement';
-import TeacherManagement from '@/components/TeacherManagement';
-import TuitionAdjustment from '@/components/TuitionAdjustment';
+import StudentManagement from '@/components/student/StudentManagement';
+import StudentRegistration from '@/components/student/StudentRegistration';
+import TeacherManagement from '@/components/teacher/TeacherManagement';
+import TuitionAdjustment from '@/components/course/TuitionAdjustment';
 
 Vue.use(Router);
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/student/manage',
       name: 'student-management',
       component: StudentManagement,
+    },
+    {
+      path: '/student/register',
+      name: 'student-register',
+      component: StudentRegistration,
     },
     {
       path: '/teacher/manage',

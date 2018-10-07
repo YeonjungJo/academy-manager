@@ -32,7 +32,10 @@ public class Student {
 	@Column(name = "schoolYear", nullable = false)
 	private SchoolYear schoolYear;
 
+	@Column(name = "courseRegistrationId")
+	private Long courseRegistrationId;
+
 	@ManyToOne
-	@JoinColumn(name = "studentId", updatable = false, insertable = false)
+	@JoinColumn(name = "courseRegistrationId", updatable = false, insertable = false)
 	private CourseRegistration courseRegistration;
 }

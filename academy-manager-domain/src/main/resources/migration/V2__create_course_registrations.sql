@@ -56,17 +56,3 @@ INSERT INTO academy_manager.course_compositions (courseCompositionId, subject, t
 INSERT INTO academy_manager.course_compositions (courseCompositionId, subject, time, courseId) VALUES (13, 'ENGLISH', 5, 7);
 INSERT INTO academy_manager.course_compositions (courseCompositionId, subject, time, courseId) VALUES (14, 'ENGLISH', 5, 8);
 INSERT INTO academy_manager.course_compositions (courseCompositionId, subject, time, courseId) VALUES (15, 'ENGLISH', 5, 9);
-
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (1, 1, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (2, 2, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (3, 3, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (4, 4, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (5, 5, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (6, 6, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (7, 7, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (8, 8, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (9, 9, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (10, 10, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (11, 11, 1, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (12, 12, 2, '2018-10-17');
-INSERT INTO academy_manager.course_registrations (courseRegistrationId, studentId, courseId, registrationDate) VALUES (13, 13, 4, '2018-10-17');

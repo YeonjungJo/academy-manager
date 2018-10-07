@@ -1,10 +1,10 @@
 package zoe.academymanager.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import zoe.academymanager.application.UserApplication;
 import zoe.academymanager.domain.student.StudentDto;
+import zoe.academymanager.domain.student.StudentRegisterForm;
 
 import java.util.List;
 
@@ -17,5 +17,10 @@ public class StudentController {
 	@GetMapping(value = "/students")
 	public List<StudentDto> listStudent() {
 		return userApplication.students();
+	}
+
+	@PostMapping(value = "/students/register")
+	public void register(@RequestBody StudentRegisterForm form) {
+		userApplication.register(form);
 	}
 }
