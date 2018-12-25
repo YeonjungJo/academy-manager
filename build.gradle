@@ -61,19 +61,3 @@ sourceSets {
         }
     }
 }
-
-//sourceSets {
-//    main {
-//        resources {
-//            srcDir "${project.projectDir}/src/main/java"
-//        }
-//    }
-//    test {
-//        java {
-//            srcDir "${project.projectDir}/src/integrationtest/java"
-//        }
-//        resources {
-//            srcDir "${project.projectDir}/src/test/java"
-//        }
-//    }
-//}
