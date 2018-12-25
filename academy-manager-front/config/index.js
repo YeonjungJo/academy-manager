@@ -53,11 +53,15 @@ module.exports = {
 
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    // index: path.resolve(__dirname, '../dist/index.html'),
+    index: path.resolve(__dirname, '../../academy-manager-app/src/main/resources/templates/index.html'),
 
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
+    // assetsRoot: path.resolve(__dirname, '../dist'),
+    // assetsSubDirectory: 'static',
+    // assetsPublicPath: '/',
+    assetsRoot: path.resolve(__dirname, '../../academy-manager-app/src/main/resources/static'),
+    assetsSubDirectory: '',
     assetsPublicPath: '/',
 
     /**
