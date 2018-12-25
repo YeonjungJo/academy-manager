@@ -53,6 +53,15 @@ project(':academy-manager-app') {
     }
 }
 
+ext.profile = (!project.hasProperty('profile') || !profile) ? 'local' : profile
+sourceSets {
+    main {
+        resources {
+            srcDirs "src/main/resources", "src/main/resources/application-${profile}.properties"
+        }
+    }
+}
+
 //sourceSets {
 //    main {
 //        resources {
