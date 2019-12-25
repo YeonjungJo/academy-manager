@@ -8,12 +8,13 @@ module.exports = {
   env: {
     browser: true,
   },
-  // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
+  // https://github.com/vujs/eslint-plugin-vue#priority-a-essential-error-prevention
   // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
   extends: ['plugin:vue/essential', 'airbnb-base'],
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'vue',
+    'vuetify'
   ],
   // check if imports actually resolve
   settings: {
@@ -49,6 +50,9 @@ module.exports = {
     'no-new': 'off',
     'no-console': 'off',
     'max-len': 'off',
-    'eol-last': 'off'
+    'eol-last': 'off',
+    'vuetify/no-deprecated-classes': 'error',
+    'vuetify/grid-unknown-attributes': 'error',
+    'vuetify/no-legacy-grid': 'error',
   }
 }

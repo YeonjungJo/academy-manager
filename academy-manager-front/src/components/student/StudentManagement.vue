@@ -34,18 +34,18 @@
         </template>
         <template slot="items" slot-scope="props">
           <tr>
-            <td class="text-xs-center">{{ props.item.name }}</td>
-            <td class="text-xs-center">
+            <td class="text-center">{{ props.item.name }}</td>
+            <td class="text-center">
               <v-chip outline disabled :color="props.item.type.code === '초등' ? 'indigo'
               : props.item.type.code === '중학' ? 'green' : 'pink'">{{ props.item.type.code }}
               </v-chip>
             </td>
-            <td class="text-xs-center">{{ props.item.registerType }}</td>
-            <td class="text-xs-center">{{ props.item.originPrice ? props.item.originPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.discountPrice ? props.item.discountPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.finalPrice ? props.item.finalPrice.toLocaleString() : '' }}</td>
-            <td class="text-xs-center">{{ props.item.registeredAt | moment("YYYY-MM-DD")}}</td>
-            <td class="text-xs-center">{{ props.item.notes}}</td>
+            <td class="text-center">{{ props.item.registerType }}</td>
+            <td class="text-center">{{ props.item.originPrice ? props.item.originPrice.toLocaleString() : '' }}</td>
+            <td class="text-center">{{ props.item.discountPrice ? props.item.discountPrice.toLocaleString() : '' }}</td>
+            <td class="text-center">{{ props.item.finalPrice ? props.item.finalPrice.toLocaleString() : '' }}</td>
+            <td class="text-center">{{ props.item.registeredAt | moment("YYYY-MM-DD")}}</td>
+            <td class="text-center">{{ props.item.notes}}</td>
           </tr>
         </template>
         <v-alert slot="no-results" :value="true" color="error" icon="warning">

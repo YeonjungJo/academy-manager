@@ -35,16 +35,16 @@
         </template>
         <template slot="items" slot-scope="props">
           <tr>
-            <td class="text-xs-center">{{ props.item.courseName}}</td>
-            <td class="text-xs-center">
+            <td class="text-center">{{ props.item.courseName}}</td>
+            <td class="text-center">
               <v-chip outline disabled :color="props.item.type.code === '초등' ? 'indigo'
               : props.item.type.code === '중학' ? 'green' : 'pink'">{{ props.item.type.code }}
               </v-chip>
             </td>
-            <td class="text-xs-center">{{ props.item.eng === 0 ? '' : props.item.eng}}</td>
-            <td class="text-xs-center">{{ props.item.math === 0 ? '' : props.item.math}}</td>
-            <td class="text-xs-center">{{ props.item.discuss === 0 ? '' : props.item.discuss}}</td>
-            <td class="text-xs-center">{{ props.item.price ? props.item.price.toLocaleString() : '' }}</td>
+            <td class="text-center">{{ props.item.eng === 0 ? '' : props.item.eng}}</td>
+            <td class="text-center">{{ props.item.math === 0 ? '' : props.item.math}}</td>
+            <td class="text-center">{{ props.item.discuss === 0 ? '' : props.item.discuss}}</td>
+            <td class="text-center">{{ props.item.price ? props.item.price.toLocaleString() : '' }}</td>
           </tr>
         </template>
       </v-data-table>
