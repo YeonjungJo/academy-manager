@@ -4,7 +4,7 @@ import Home from '@/components/Home';
 import StudentManagement from '@/components/student/StudentManagement';
 import StudentRegistration from '@/components/student/StudentRegistration';
 import TeacherManagement from '@/components/teacher/TeacherManagement';
-import TuitionAdjustment from '@/components/course/TuitionAdjustment';
+import LectureManagement from '@/components/course/LectureManagement';
 
 Vue.use(Router);
 
@@ -38,17 +38,12 @@ export default new Router({
     {
       path: '/lecture/manage',
       name: 'lecture-management',
-      component: TeacherManagement,
+      component: LectureManagement,
     },
     {
       path: '/teaching-material/manage',
       name: 'teaching-material-management',
       component: TeacherManagement,
-    },
-    {
-      path: '/tuition/adjust',
-      name: 'tuition-adjustment',
-      component: TuitionAdjustment,
     },
     {
       path: '/contract',

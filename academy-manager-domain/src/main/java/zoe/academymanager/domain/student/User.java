@@ -50,4 +50,10 @@ public class User {
 
 	@Column(name = "grantedAt", nullable = false)
 	private Date grantedAt;
+
+	@Column(name = "address", nullable = true)
+	private String address;
+
+	@Column(name = "birth", nullable = true)
+	private Date birth;
 }

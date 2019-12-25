@@ -22,6 +22,6 @@ public class UserApplicationImpl implements UserApplication {
 
 	@Override
 	public void register(StudentRegisterForm form) {
-
+		studentService.register(form);
 	}
 }

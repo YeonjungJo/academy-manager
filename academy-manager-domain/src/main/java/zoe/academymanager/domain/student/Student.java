@@ -19,7 +19,7 @@ public class Student {
 	private Long studentId;
 
 	@Column(name = "userId", nullable = false)
-	private String userId;
+	private Long userId;
 
 	@OneToOne
 	@JoinColumn(name = "userId", referencedColumnName = "userId", updatable = false, insertable = false)

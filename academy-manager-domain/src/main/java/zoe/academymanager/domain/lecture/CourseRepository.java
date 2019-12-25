@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CourseRepository extends JpaRepository<Course, Long> {
 	List<Course> findAllByEnableStatusIn(List<EnableStatus> notDeleted);
+
+    Course findByCourseNameAndEnableStatusIn(String name, List<EnableStatus> notDeleted);
 }
