@@ -3,6 +3,7 @@ package zoe.academymanager.domain.lecture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import zoe.academymanager.domain.EnableStatus;
+import zoe.academymanager.domain.student.SchoolType;
 
 import javax.transaction.Transactional;
 import java.util.List;
@@ -30,7 +31,7 @@ public class CourseService {
     public void register(CourseRegisterForm form) {
         Course course = Course.builder()
             .courseName(form.getName())
-            .schoolType(form.getSchoolType())
+            .schoolType(SchoolType.getByDesc(form.getSchoolType()))
             .price(form.getPrice())
             .enableStatus(EnableStatus.ACTIVE)
             .build();
@@ -39,7 +40,7 @@ public class CourseService {
         form.getAssigned().forEach((key, value) -> {
             CourseComposition courseComposition = CourseComposition.builder()
                 .courseId(course.getCourseId())
-                .subject(key)
+                .subject(Subject.getByDesc(key))
                 .time(value)
                 .build();
             courseCompositionRepository.save(courseComposition);

@@ -53,7 +53,7 @@ export default {
       clipped: false,
       drawer: true,
       items: [
-        { icon: 'home', title: 'HOME', url: '/home' },
+        // { icon: 'home', title: 'HOME', url: '/home' },
         { icon: 'add_circle_outline', title: '신입생 등록', url: '/student/register' },
         { icon: 'face', title: '원생관리', url: '/student/manage' },
         // { icon: 'person', title: '강사관리', url: '/teacher/manage' },

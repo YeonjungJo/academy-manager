@@ -1,7 +1,6 @@
 package zoe.academymanager.domain.lecture;
 
 import lombok.*;
-import zoe.academymanager.domain.student.SchoolType;
 
 import java.util.Map;
 
@@ -12,7 +11,7 @@ import java.util.Map;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class CourseRegisterForm {
     private String name;
-    private SchoolType schoolType;
-    private Map<Subject, Integer> assigned;
+    private String schoolType;
+    private Map<String, Integer> assigned;
     private Long price;
 }
