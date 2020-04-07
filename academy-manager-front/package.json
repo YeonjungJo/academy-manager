@@ -12,11 +12,12 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "vue": "^2.5.17",
-    "vue-router": "^3.0.1",
-    "vuetify": "^1.2.0",
     "material-design-icons-iconfont": "^3.0.3",
-    "roboto-fontface": "*"
+    "roboto-fontface": "*",
+    "vue": "^2.5.17",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.0.1",
+    "vuetify": "^1.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

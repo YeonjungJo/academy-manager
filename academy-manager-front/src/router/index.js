@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Home from '@/components/Home';
 import StudentManagement from '@/components/student/StudentManagement';
 import StudentRegistration from '@/components/student/StudentRegistration';
+import StudentDetail from '@/components/student/StudentDetail';
 import TeacherManagement from '@/components/teacher/TeacherManagement';
 import LectureManagement from '@/components/course/LectureManagement';
 
@@ -19,6 +20,12 @@ export default new Router({
       path: '/student/manage',
       name: 'student-management',
       component: StudentManagement,
+    },
+    {
+      path: '/student/details',
+      name: 'student-detail',
+      component: StudentDetail,
+      props: true,
     },
     {
       path: '/student/register',

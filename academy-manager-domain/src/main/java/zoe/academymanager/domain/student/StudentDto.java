@@ -12,6 +12,7 @@ import java.util.Optional;
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class StudentDto {
+    private Long studentId;
     private String name;
     private SchoolType type;
     private Date engRegisterDate;
@@ -27,12 +28,13 @@ public class StudentDto {
         Long originPrice = Optional.ofNullable(student.getCourseRegistration()).map(it -> it.getCourse().getPrice()).orElse(0L);
 
         return StudentDto.builder()
-                .name(student.getUser().getName())
-                .type(student.getSchoolYear().getSchoolType())
-                .registerType(Optional.ofNullable(student.getCourseRegistration()).map(it -> it.getCourse().getCourseName()).orElse(Strings.EMPTY))
-                .originPrice(originPrice)
-                .finalPrice(originPrice)
-                .registeredAt(student.getUser().getCreatedAt())
-                .build();
+            .studentId(student.getStudentId())
+            .name(student.getUser().getName())
+            .type(student.getSchoolYear().getSchoolType())
+            .registerType(Optional.ofNullable(student.getCourseRegistration()).map(it -> it.getCourse().getCourseName()).orElse(Strings.EMPTY))
+            .originPrice(originPrice)
+            .finalPrice(originPrice)
+            .registeredAt(student.getUser().getCreatedAt())
+            .build();
     }
 }

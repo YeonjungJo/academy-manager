@@ -33,7 +33,7 @@
           </tr>
         </template>
         <template slot="items" slot-scope="props">
-          <tr>
+          <tr @click="showDetail(props.item)" class="pointer">
             <td class="text-xs-center">{{ props.item.name }}</td>
             <td class="text-xs-center">
               <v-chip outline disabled :color="props.item.type.code === '초등' ? 'indigo'
@@ -57,6 +57,9 @@
 </template>
 
 <style scoped>
+  .pointer {
+    cursor: pointer;
+  }
 </style>
 
 <script>
@@ -85,6 +88,12 @@ export default {
   methods: {
     register() {
 
+    },
+    showDetail(item) {
+      this.$router.push({
+        name: 'student-detail',
+        params: { studentId: item.studentId },
+      });
     },
   },
 };

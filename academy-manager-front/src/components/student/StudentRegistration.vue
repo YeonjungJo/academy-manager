@@ -93,7 +93,7 @@
 
 <script>
 export default {
-  name: 'StudentManagement',
+  name: 'StudentRegistration',
   data: () => ({
     name: '',
     birth: null,
@@ -125,10 +125,15 @@ export default {
   methods: {
     submit() {
       this.formHasErrors = false;
-
+      console.log(Object.keys(this.form));
       Object.keys(this.form).forEach((f) => {
-        if (!this.form[f]) this.formHasErrors = true;
+        if (!this.form[f]) {
+          console.log(this.form[f]);
+          this.formHasErrors = true;
+        }
       });
+
+      console.log(this.formHasErrors);
 
       if (!this.formHasErrors) {
         this.$http.post('/api/students/register', this.form);
